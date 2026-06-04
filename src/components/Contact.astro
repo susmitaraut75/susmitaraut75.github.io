@@ -1,0 +1,227 @@
+---
+
+---
+
+<section id="contact" class="section contact-section">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">I'd love to hear about opportunities in aged care and personal support</p>
+    </div>
+
+    <div class="contact-grid animate-on-scroll animate-delay-1">
+      <!-- Contact Info Cards -->
+      <div class="contact-info">
+        <div class="contact-card glass-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <div class="contact-detail">
+            <h4>Email</h4>
+            <a href="mailto:rautsushmeeta@gmail.com">rautsushmeeta@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-card glass-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div class="contact-detail">
+            <h4>Location</h4>
+            <p>Melbourne, VIC, Australia</p>
+          </div>
+        </div>
+
+        <div class="contact-card glass-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <div class="contact-detail">
+            <h4>Availability</h4>
+            <p>Morning, afternoon, night, weekend & public holiday shifts</p>
+          </div>
+        </div>
+
+        <div class="contact-card glass-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <div class="contact-detail">
+            <h4>Work Rights</h4>
+            <p>Full Australian Work Rights</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Card -->
+      <div class="contact-cta glass-card">
+        <div class="cta-decoration">
+          <div class="cta-circle"></div>
+          <div class="cta-circle cta-circle-2"></div>
+        </div>
+        <div class="cta-content">
+          <h3>Let's Work Together</h3>
+          <p>
+            I'm actively seeking opportunities in aged care, disability support, and personal care roles
+            across Melbourne. If you're looking for a dedicated and compassionate care professional,
+            I'd love to connect.
+          </p>
+          <a href="mailto:rautsushmeeta@gmail.com" class="btn btn-primary">
+            Send Me an Email
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-section {
+    background: linear-gradient(180deg, var(--color-bg), var(--color-bg-alt));
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: start;
+  }
+
+  /* Contact Info Cards */
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    padding: var(--space-lg) var(--space-xl);
+  }
+
+  .contact-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--color-primary-lighter), var(--color-primary-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--color-primary-dark);
+  }
+
+  .contact-detail h4 {
+    font-family: var(--font-heading);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 2px;
+  }
+
+  .contact-detail a,
+  .contact-detail p {
+    font-size: var(--fs-sm);
+    color: var(--color-text-light);
+  }
+
+  .contact-detail a:hover {
+    color: var(--color-primary);
+  }
+
+  /* CTA Card */
+  .contact-cta {
+    position: relative;
+    overflow: hidden;
+    padding: var(--space-3xl);
+    background: linear-gradient(135deg, rgba(194, 118, 128, 0.08), rgba(232, 180, 184, 0.05));
+  }
+
+  .cta-decoration {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .cta-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+  }
+
+  .cta-circle:first-child {
+    width: 200px;
+    height: 200px;
+    top: -60px;
+    right: -60px;
+  }
+
+  .cta-circle-2 {
+    width: 150px;
+    height: 150px;
+    bottom: -40px;
+    left: -40px;
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-content h3 {
+    font-family: var(--font-heading);
+    font-size: var(--fs-xl);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-lg);
+  }
+
+  .cta-content p {
+    font-size: var(--fs-sm);
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: var(--space-2xl);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-cta {
+      padding: var(--space-2xl);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact-card {
+      flex-direction: column;
+      text-align: center;
+      padding: var(--space-lg);
+    }
+  }
+</style>

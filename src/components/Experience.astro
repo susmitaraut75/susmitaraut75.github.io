@@ -1,0 +1,283 @@
+---
+const experiences = [
+  {
+    title: 'Cleaner (Aged Care Facility)',
+    company: 'Cirka Pty Ltd',
+    location: 'South Yarra, VIC',
+    period: 'Sept 2025 — Present',
+    current: true,
+    duties: [
+      'Worked within aged care environments, including Jewish Care and TLC Healthcare facilities, maintaining high standards of cleanliness, infection control, and resident safety.',
+      'Performed infection prevention and control cleaning in resident rooms, bathrooms, kitchens, and communal areas.',
+      'Supported resident wellbeing by maintaining safe, comfortable, and hygienic living environments in accordance with aged care standards.',
+      'Developed positive and respectful relationships with elderly residents while maintaining privacy, dignity, and confidentiality.',
+      'Worked collaboratively with care staff and team members to maintain high care and safety standards.',
+    ],
+  },
+  {
+    title: 'Nurse',
+    company: 'Indira IVF Centre',
+    location: 'Kathmandu, Nepal',
+    period: 'Dec 2024 — Apr 2025',
+    current: false,
+    duties: [
+      'Assisted patients with personal care, mobility, comfort, and emotional support during treatments.',
+      'Maintained strict infection prevention and control standards to ensure patient safety.',
+      'Monitored patient wellbeing and responded professionally to individual care needs.',
+      'Communicated respectfully with patients and families while maintaining dignity and confidentiality.',
+      'Collaborated with healthcare professionals to deliver high-quality person-centred care.',
+    ],
+  },
+  {
+    title: 'Nurse',
+    company: 'Metro Hospital',
+    location: 'Kathmandu, Nepal',
+    period: 'Apr 2023 — Dec 2024',
+    current: false,
+    duties: [
+      'Delivered compassionate and person-centred care to patients in a clinical environment.',
+      'Assisted with daily patient support, hygiene, comfort, and wellbeing.',
+      'Followed strict hygiene and infection control procedures within patient care areas.',
+      'Educated and communicated effectively with patients regarding health, nutrition, and lifestyle guidance.',
+      'Worked collaboratively within multidisciplinary healthcare teams to support patient outcomes.',
+    ],
+  },
+];
+---
+
+<section id="experience" class="section experience-section">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <h2 class="section-title">Work Experience</h2>
+      <p class="section-subtitle">My professional journey across healthcare and aged care</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-line"></div>
+      {experiences.map((exp, index) => (
+        <div class={`timeline-item ${index % 2 === 0 ? 'left' : 'right'} animate-on-scroll animate-delay-${(index % 3) + 1}`}>
+          <div class="timeline-dot">
+            <div class="dot-inner"></div>
+          </div>
+          <div class="timeline-card glass-card">
+            <div class="card-header">
+              {exp.current && <span class="current-badge">Current</span>}
+              <h3 class="card-title">{exp.title}</h3>
+              <p class="card-company">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                {exp.company} — {exp.location}
+              </p>
+              <p class="card-period">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                {exp.period}
+              </p>
+            </div>
+            <ul class="card-duties">
+              {exp.duties.map((duty) => (
+                <li>
+                  <span class="duty-bullet"></span>
+                  {duty}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience-section {
+    background: var(--color-bg-alt);
+  }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+      to bottom,
+      var(--color-primary-light),
+      var(--color-primary),
+      var(--color-primary-light)
+    );
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--space-3xl);
+    position: relative;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-item.left {
+    justify-content: flex-start;
+    padding-right: calc(50% + 30px);
+  }
+
+  .timeline-item.right {
+    justify-content: flex-end;
+    padding-left: calc(50% + 30px);
+  }
+
+  /* Timeline dot */
+  .timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    width: 18px;
+    height: 18px;
+    background: var(--color-white);
+    border: 3px solid var(--color-primary);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dot-inner {
+    width: 6px;
+    height: 6px;
+    background: var(--color-primary);
+    border-radius: 50%;
+  }
+
+  /* Card */
+  .timeline-card {
+    width: 100%;
+  }
+
+  .card-header {
+    margin-bottom: var(--space-lg);
+    position: relative;
+  }
+
+  .current-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: var(--color-white);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-sm);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .card-title {
+    font-family: var(--font-heading);
+    font-size: var(--fs-lg);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+  }
+
+  .card-company,
+  .card-period {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--fs-sm);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-xs);
+  }
+
+  .card-company svg,
+  .card-period svg {
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+
+  .card-duties {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .card-duties li {
+    display: flex;
+    gap: var(--space-sm);
+    font-size: var(--fs-sm);
+    color: var(--color-text-light);
+    line-height: 1.6;
+  }
+
+  .duty-bullet {
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    background: var(--color-primary-light);
+    border-radius: 50%;
+    margin-top: 8px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .timeline-line {
+      left: 20px;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+      padding-left: 55px;
+      padding-right: 0;
+      justify-content: flex-start;
+    }
+
+    .timeline-dot {
+      left: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .timeline-line {
+      left: 16px;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+      padding-left: 45px;
+    }
+
+    .timeline-dot {
+      left: 16px;
+      width: 14px;
+      height: 14px;
+    }
+
+    .dot-inner {
+      width: 4px;
+      height: 4px;
+    }
+
+    .timeline-card {
+      padding: var(--space-lg);
+    }
+  }
+</style>

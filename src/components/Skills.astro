@@ -1,0 +1,169 @@
+---
+const skillCategories = [
+  {
+    title: 'Care & Support',
+    icon: '❤️',
+    color: 'rose',
+    skills: [
+      'Personal Care & Resident Support',
+      'Activities of Daily Living (ADLs)',
+      'Aged Care and Disability Support',
+      'Safe Food Handling & Hygiene Practices',
+    ],
+  },
+  {
+    title: 'Clinical Skills',
+    icon: '🏥',
+    color: 'teal',
+    skills: [
+      'Infection Prevention and Control',
+      'Manual Handling & Safe Mobility',
+      'Resident Observation & Reporting',
+      'Documentation & Record Keeping',
+    ],
+  },
+  {
+    title: 'Professional Skills',
+    icon: '⭐',
+    color: 'amber',
+    skills: [
+      'Communication & Teamwork',
+      'Cultural Awareness & Respectful Care',
+      'Time Management & Organisation',
+      'Professionalism & Compassion',
+    ],
+  },
+];
+---
+
+<section id="skills" class="section skills-section">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <h2 class="section-title">Core Skills</h2>
+      <p class="section-subtitle">Comprehensive skill set for delivering exceptional care</p>
+    </div>
+
+    <div class="skills-grid">
+      {skillCategories.map((category, index) => (
+        <div class={`skill-category glass-card skill-${category.color} animate-on-scroll animate-delay-${index + 1}`}>
+          <div class="skill-category-header">
+            <span class="skill-category-icon">{category.icon}</span>
+            <h3 class="skill-category-title">{category.title}</h3>
+          </div>
+          <ul class="skill-list">
+            {category.skills.map((skill) => (
+              <li class="skill-item">
+                <div class="skill-dot"></div>
+                <span>{skill}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills-section {
+    background: var(--color-bg-alt);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .skill-category {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+
+  .skill-rose::before {
+    background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary));
+  }
+
+  .skill-teal::before {
+    background: linear-gradient(90deg, #7BC8C4, #4BA8A3);
+  }
+
+  .skill-amber::before {
+    background: linear-gradient(90deg, var(--color-accent-light), var(--color-accent));
+  }
+
+  .skill-category-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  .skill-category-icon {
+    font-size: 1.8rem;
+  }
+
+  .skill-category-title {
+    font-family: var(--font-heading);
+    font-size: var(--fs-lg);
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .skill-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    font-size: var(--fs-sm);
+    color: var(--color-text-light);
+    line-height: 1.5;
+  }
+
+  .skill-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+    transition: transform var(--transition-fast);
+  }
+
+  .skill-rose .skill-dot {
+    background: var(--color-primary);
+  }
+
+  .skill-teal .skill-dot {
+    background: #4BA8A3;
+  }
+
+  .skill-amber .skill-dot {
+    background: var(--color-accent);
+  }
+
+  .skill-category:hover .skill-dot {
+    transform: scale(1.4);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
